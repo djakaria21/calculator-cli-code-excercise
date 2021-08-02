@@ -10,6 +10,10 @@ Inquirer also doesn't have security vulnerabilities, and is regularly updated.
 
 The reasoning behind not going with the react based cli creation tools is the lack of working examples as well as the repository not being updated for literally 2 years.
 
+## Nice to haves
+
+To finish, the actual calculator, also adding security, testing, and perhaps try to update the react cli node packages to actually have working examples, or get the existing samples to work.
+
 
 ## How to run
 
@@ -17,7 +21,7 @@ to run
 
 ```
 npm install 
-node ./bin/index.js
+node ./src/index.js
 ```
 then follow the prompt, type your input and see your solution!
 
