@@ -1,3 +1,5 @@
+const isOperand = require("./isOperand.js")
+
 function validate(array_to_be_processed){
 
 split_array = array_to_be_processed.split(/[\s,]+/);
@@ -45,14 +47,6 @@ if(number_count -1 != operand_count){
 //Returning true if number and operand counts are correct
 return true;
 }
-}
-
-function isOperand(a){
-    if(a == '+' || a == '-' || a == '/' || a == '*')
-    {
-        return true;
-    }
-    return false;
 }
 
 module.exports = validate
