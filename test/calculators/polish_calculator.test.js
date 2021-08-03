@@ -1,19 +1,15 @@
-const polish_calculator = require('../src/calculators/polish_calculator.js');
+const polish_calculator = require('../../src/calculators/polish_calculator.js');
 
 test('testing empty input', () => {
-    expect(() => {polish_calculator.is_valid("")
-}).toThrow('Empty Equation');
     expect(() => {polish_calculator.calculate("")
 }).toThrow('Empty Equation');
 });
 
 test('testing simplest case', () => {
-    expect(polish_calculator.is_valid("1")).toBe(true);
     expect(polish_calculator.calculate("1")).toBe(1);
 });
 
 test('testing simplest invalid case', () => {
-    expect(() => {polish_calculator.is_valid("-")}).toThrow('Invalid Amount of Numbers per Operators');
     expect(() => {polish_calculator.calculate("-")}).toThrow('Invalid Amount of Numbers per Operators');
 });
 
@@ -39,11 +35,10 @@ test('testing case with negative numbers and multiplication', () => {
     expect(polish_calculator.calculate("-3 -2 * 5 +")).toBe(11);
 });
 
-test('testing case with invalid equation, mismatch between amount of numbers and operators', () => {
-    expect(() => {polish_calculator.is_valid("5 9 1 - 8 /")}).toThrow('Invalid Amount of Numbers per Operators');
-    expect(() => {polish_calculator.calculate("5 9 1 - 8 /")}).toThrow('Invalid Amount of Numbers per Operators');
-});
-
 test('testing case with basic addition', () => {
     expect(polish_calculator.calculate("5 8 +")).toBe(13);
+});
+
+test('testing case with invalid equation, mismatch between amount of numbers and operators', () => {
+    expect(() => {calculate("5 9 1 - 8 /")}).toThrow('Invalid Amount of Numbers per Operators');
 });
