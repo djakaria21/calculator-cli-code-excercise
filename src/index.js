@@ -1,9 +1,7 @@
 #!/usr/bin/env node
-//has a start
-//has a quit
-//implements add, subtract, multiply, divide
 const inquirer = require('inquirer');
 
+//used to get input from the user
 inquirer
   .prompt([
     {

@@ -5,22 +5,30 @@ const polish_calcuator = {
     },
     is_valid: function(array_to_be_processed){
         split_array = array_to_be_processed.split(/[\s,]+/);
+
+        //Checking for base valid case
         if(split_array.length == 1){
+
+            //Empty equation case
             if (split_array[0] == "")
             {
                 throw new Error('Empty Equation');
             }
+
+            //Only Operand Case
             if(isOperand(split_array[0]))
             {
                 throw new Error('Invalid Amount of Numbers per Operators')
             }
+            //Only a single number case
             else{
                 return true;
             }
         }
+        //Checking for if the operand and number is correct for input
         else{
-        let operand_count = 0;
-        let number_count = 0;
+        operand_count = 0;
+        number_count = 0;
 
         for (const i of split_array){
             if (isOperand(i))
@@ -33,10 +41,12 @@ const polish_calcuator = {
 
         }
 
+        //Throwing error if the number and operand counts are incorrect
         if(number_count -1 != operand_count){
             throw new Error('Invalid Amount of Numbers per Operators');
         }
         
+        //Returning true if number and operand counts are correct
         return true;
         }
     }
