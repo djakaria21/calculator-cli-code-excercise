@@ -1,6 +1,5 @@
 const isOperand = require("./isOperand.js");
 const validate = require("./validate.js");
-// TODO condense operations into a service class
 const add = require("../../operations/add");
 const divide = require("../../operations/divide.js");
 const multiply = require("../../operations/multiply.js");
