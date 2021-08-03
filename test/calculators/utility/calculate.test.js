@@ -1,5 +1,12 @@
 const calculate = require("../../../src/calculators/utility/calculate.js");
 
+/*
+    Calculate tests
+    used to ensure that our calculate utility class works
+    Parameters:  String array_to_be_processed
+    Will throw an error if equation is invalid
+*/
+
 test("testing case with invalid equation, mismatch between amount of numbers and operators", () => {
 	expect(() => {
 		calculate("5 9 1 - 8 /");

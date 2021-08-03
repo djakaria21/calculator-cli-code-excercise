@@ -1,4 +1,4 @@
-# calculator-cli-code-exercise
+# Calculator Cli Code Exercise
 
 ## High level description of solution
 
@@ -59,11 +59,13 @@ A nice to have could be refactoring the operations into a service/factory method
 
 Another nice to have would be implementing some sort of bundling/minimizer tool to complie our code and have it still run.
 
-Of course additional testing is always nice.  Having significantly bigger/longer tests with a size of over, lets say 10,000 for out input would be good to test the effeciency of our calculator.
+Of course additional testing is always nice.  Having significantly bigger/longer tests with a size of over, lets say 10,000 for out input would be good to test the effeciency of our calculator.  The addition of a mutation test library like stryker or something simliar would help flesh out missing edge cases for testing, also including code coverage, but I feel as if that type of thing is added in the stages when you setup automated pipelines.  It is above the scope of this project.
 
 The tests themselves, as well as the import structure of everything is based off of relative imports instead of based off having imports based off the root of the project.  I think there are a couple of solutions to this using some sort of bundling, I would fix this given more time, but decided against it during the start as I spent so much time trying to figure out how to get ink/pastel working.
 
 Technically there is repeated code in changing the variables in each of the operation methods from strings to floats, I felt like this would be overkill, but if I were to do it I would do the overhaul alongside creating a factory class with all of the operations.  It would make more sense to do it that way too, as you could change the values into floats first, and then pass the values to operated on within the factory method itself.
+
+If we needed our calculator class to be its own microservice (I feel like its justified only if we have multiple calculator instances, at this writing there is only one) we could create a calculator interface and assign the calculator interface to the polish_calculator.  Then we could use the interface inside of our index.js instead of importing the specific polish_calculator.
 
 ## How to run
 

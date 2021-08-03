@@ -1,5 +1,11 @@
 const isOperand = require("./isOperand.js");
 
+/*
+    Validate utility function
+    Parameters: String array_to_be_processed
+    function will throw an error if equation passed in is invalid, will return true if the class is valid
+*/
+
 function validate(array_to_be_processed) {
 	split_array = array_to_be_processed.split(/[\s,]+/);
 

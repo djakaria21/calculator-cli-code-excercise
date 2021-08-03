@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 const inquirer = require("inquirer");
 const polish_calcuator = require("./calculators/polish_calculator");
-const polish_calculator = require("./calculators/polish_calculator");
 
-//used to get input from the user
+/*
+  index.js
+  used to run and prompt the user for information in our app
+*/
 inquirer
 	.prompt([
 		{

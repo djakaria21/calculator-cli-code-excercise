@@ -6,6 +6,12 @@ const divide = require("../../operations/divide.js");
 const multiply = require("../../operations/multiply.js");
 const subtract = require("../../operations/subtract.js");
 
+/*
+    Calculate utility function
+    Parameters: String array_to_be_processed
+    function will throw an error if equation passed in is invalid, will return the solution to the equation if equation is valid
+*/
+
 function calculate(array_to_be_processed) {
 
 
