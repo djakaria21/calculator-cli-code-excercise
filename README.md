@@ -1,9 +1,12 @@
 # Calculator Cli Code Exercise
 
+## First a note on verbosity and comments
+
+The following readme/explanation as well as the code comments and annotations are rather verbose, this is intentional as it serves as a way for me to be able to show what I know, and as a reference for myself when I demo or talk about the code itself.  Normally having a block comment at the top of a class/function to explain what it does is enough, or just having well structured/easy to read code.  Although there are different philosophies and styles regarding this in general, I thought that since this is a code excersise, erring on being more verbose would lend itself to being more favorable in this instance.  I normally insert comments into the code where I feel as if there was a design decision that is not easily understood, as well as a general comment at the top of a class/function with parameters that it takes as well as a small summary of the purpose and intetion of the class if it is not immediately obvious.
+
 ## High level description of solution
 
 The problem I set to solve was to create a polish calculator that took an equation as input and would give a solution to the problem.
-
 
 I decided to use inquirer as an input system to get the equation, this would pull up the default editor of whoever the user is for whichever operating system is being used so it could be used regardless of platform (although I guess that isn't really a problem with clis in general).  I thought this would be a good user experience and the user can choose who/what editor they want to use by changing their local settings.
 
@@ -66,6 +69,9 @@ The tests themselves, as well as the import structure of everything is based off
 Technically there is repeated code in changing the variables in each of the operation methods from strings to floats, I felt like this would be overkill, but if I were to do it I would do the overhaul alongside creating a factory class with all of the operations.  It would make more sense to do it that way too, as you could change the values into floats first, and then pass the values to operated on within the factory method itself.
 
 If we needed our calculator class to be its own microservice (I feel like its justified only if we have multiple calculator instances, at this writing there is only one) we could create a calculator interface and assign the calculator interface to the polish_calculator.  Then we could use the interface inside of our index.js instead of importing the specific polish_calculator.
+
+With more time, the cli could be extended to have an api, run with either http rest or graphql, and a front end could be created to serve that endpoint.  It would make sense to use Okta for the auth (since its made for that and it seems like it would integrate with the current build rather seamlessly).
+
 
 ## How to run
 
